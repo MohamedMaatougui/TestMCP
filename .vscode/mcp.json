@@ -1,0 +1,13 @@
+{
+    "servers":{
+        "conference_server": {
+            "type":"stdio",
+            "command": "uv",
+            "args": [
+                "run",
+                "mcp_server.py"
+            ],
+            "url":"https://convincing-coffee-guan.fastmcp.app/mcp",
+        }
+    }
+}

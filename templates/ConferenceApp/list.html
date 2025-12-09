@@ -1,0 +1,25 @@
+<table border=1 style="width:100%; text-aligned:left;">
+    <tr>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Location</th>
+        <th>Details</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for conf in conferences %}
+
+    <tr>
+        <td>{{ conf.name }}</td>
+        <td>{{ conf.start_date }}</td>
+        <td>{{ conf.end_date }}</td>
+        <td>{{ conf.location }}</td>
+        <td><a href = "{% url 'conference_details_view' conf.pk %}"> Details</a></td>
+        <td><a href = "{% url 'conference_update_view' conf.pk %}"> Update</a></td>
+        <td><a href = "{% url 'conference_delete_view' conf.pk %}"> Delete</a></td>
+    </tr>
+    {% empty %}
+    <p>No Conferences available</p>
+    {% endfor %}
+</table>
